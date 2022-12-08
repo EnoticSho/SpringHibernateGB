@@ -1,6 +1,5 @@
 package com.example.springhibernategb.services;
 
-import com.example.springhibernategb.entity.Buyer;
 import com.example.springhibernategb.entity.Product;
 
 import java.util.List;
