@@ -47,7 +47,6 @@ public class UserController {
     public String createUser(@ModelAttribute("user") User user) {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(12);
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        System.out.println(user.toString());
         userService.saveUser(user);
         return "redirect:/users";
     }
@@ -63,16 +62,14 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('createUser')")
-    private String deleteUser(@PathVariable int id) {
-        System.out.println(userService);
+    public String deleteUser(@PathVariable int id) {
         userService.deleteById1(id);
         return "redirect:/users";
     }
 
-    @PatchMapping
+    @PatchMapping()
     @PreAuthorize("hasAuthority('createUser')")
-    private String update(@ModelAttribute("userEdit") User user) {
-        System.out.println(user.toString());
+    public String update(@ModelAttribute("userEdit") User user) {
         userService.saveUser(user);
         return "redirect:/users";
     }
