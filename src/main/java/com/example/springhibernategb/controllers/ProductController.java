@@ -1,10 +1,9 @@
 package com.example.springhibernategb.controllers;
 
-import com.example.springhibernategb.entity.Buyer;
 import com.example.springhibernategb.entity.Product;
-import com.example.springhibernategb.services.BuyerService;
 import com.example.springhibernategb.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +12,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/products")
+@PreAuthorize("hasAnyAuthority('products')")
 public class ProductController {
     @Autowired
     private ProductService productService;

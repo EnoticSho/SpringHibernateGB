@@ -1,6 +1,5 @@
 package com.example.springhibernategb.DAO;
 
-import com.example.springhibernategb.entity.Buyer;
 import com.example.springhibernategb.entity.Product;
 import org.hibernate.Session;
 import org.hibernate.query.Query;

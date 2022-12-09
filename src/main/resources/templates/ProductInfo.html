@@ -12,14 +12,6 @@
   <tr>
     <th> Name </th>
   </tr>
-
-  <tr th:if="${ProductInfo.getBuyerList().isEmpty()}">
-    <td colspan="3"> No Buyers </td>
-  </tr>
-
-  <tr th:each="buyer : ${ProductInfo.getBuyerList()}">
-    <td th:text="${buyer.getName()}"></td>
-  </tr>
 </table>
 </body>
 </html>
